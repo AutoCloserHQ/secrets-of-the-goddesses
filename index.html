@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Secrets of the Goddesses
+    Complete one-file landing page
+    Brand: Kimaada / Heaven’s Reflection
+  -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Secrets of the Goddesses | Kimaada — Heaven’s Reflection</title>
+
+  <meta
+    name="description"
+    content="Secrets of the Goddesses by Kimaada, Heaven’s Reflection — a feminine movement, belly dance, beauty, self-care, and goddess transformation brand."
+  />
+
+  <meta property="og:title" content="Secrets of the Goddesses | Kimaada — Heaven’s Reflection" />
+  <meta
+    property="og:description"
+    content="Enter a feminine temple of movement, beauty rituals, elegance, confidence, sensual grace, and goddess self-care."
+  />
+  <meta property="og:type" content="website" />
+
+  <!-- Elegant fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================================================
+       ROOT THEME
+    ========================================================= */
+
+    :root {
+      --midnight: #03030a;
+      --black: #05040a;
+      --navy: #071326;
+      --navy-2: #0b1830;
+      --ivory: #fff8e8;
+      --soft-ivory: #f7ecd6;
+      --muted: #cdbf9f;
+      --gold: #d7ae5f;
+      --gold-2: #f3d68a;
+      --bronze: #a76e3f;
+      --rose: #d99b8c;
+      --emerald: #59c39b;
+      --amethyst: #a98cff;
+      --glass: rgba(255, 248, 232, 0.07);
+      --glass-2: rgba(255, 248, 232, 0.12);
+      --border: rgba(243, 214, 138, 0.28);
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.42);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1180px;
+      --transition: 300ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(217, 155, 140, 0.15), transparent 30%),
+        radial-gradient(circle at 85% 8%, rgba(89, 195, 155, 0.11), transparent 28%),
+        radial-gradient(circle at 50% 0%, rgba(215, 174, 95, 0.12), transparent 40%),
+        linear-gradient(135deg, var(--midnight), var(--black) 42%, var(--navy));
+      color: var(--ivory);
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%);
+      z-index: 0;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(100% - 36px, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section-tight {
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-2);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-2));
+    }
+
+    .eyebrow::after {
+      background: linear-gradient(90deg, var(--gold-2), transparent);
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .section-title .gold,
+    .hero-title .gold {
+      background: linear-gradient(120deg, #fff2ba, var(--gold-2), var(--bronze));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 22px rgba(215, 174, 95, 0.14));
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.14rem);
+      line-height: 1.85;
+      max-width: 760px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center .section-copy {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* =========================================================
+       PARTICLES / BACKGROUND MAGIC
+    ========================================================= */
+
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--gold-2);
+      box-shadow: 0 0 18px rgba(243, 214, 138, 0.85);
+      opacity: 0;
+      animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(20px) scale(0.5);
+        opacity: 0;
+      }
+      14% {
+        opacity: 0.9;
+      }
+      80% {
+        opacity: 0.45;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.75;
+      pointer-events: none;
+      animation: orbPulse 7s ease-in-out infinite alternate;
+    }
+
+    .orb.gold {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(243, 214, 138, 0.28), transparent 67%);
+    }
+
+    .orb.rose {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(217, 155, 140, 0.2), transparent 68%);
+    }
+
+    .orb.amethyst {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(169, 140, 255, 0.15), transparent 70%);
+    }
+
+    @keyframes orbPulse {
+      from {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      to {
+        transform: translate3d(18px, -22px, 0) scale(1.08);
+      }
+    }
+
+    /* =========================================================
+       NAV
+    ========================================================= */
+
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(100% - 28px, 1180px);
+      z-index: 40;
+      border: 1px solid rgba(243, 214, 138, 0.22);
+      background: rgba(5, 4, 10, 0.62);
+      backdrop-filter: blur(22px);
+      border-radius: 999px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 13px 18px 13px 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 35% 25%, #fff4bc, #d7ae5f 38%, #6c421f 72%, #1b1020);
+      box-shadow:
+        0 0 24px rgba(243, 214, 138, 0.35),
+        inset 0 0 18px rgba(255, 255, 255, 0.22);
+      display: grid;
+      place-items: center;
+      color: #150d10;
+      font-weight: 800;
+      font-family: "Cinzel", serif;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-family: "Cinzel", serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255, 248, 232, 0.74);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold), var(--bronze));
+      color: #140d10;
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(215, 174, 95, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-cta::after,
+    .btn.gold-btn::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -40%;
+      width: 34%;
+      height: 160%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+      transform: rotate(18deg);
+      animation: shimmer 3.4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -45%;
+        opacity: 0;
+      }
+      18% {
+        opacity: 0.75;
+      }
+      42% {
+        left: 125%;
+        opacity: 0;
+      }
+      100% {
+        left: 125%;
+        opacity: 0;
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: var(--ivory);
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 145px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .orb.gold {
+      right: -90px;
+      top: 100px;
+    }
+
+    .hero .orb.rose {
+      left: -80px;
+      bottom: 140px;
+      animation-delay: -1.5s;
+    }
+
+    .hero .orb.amethyst {
+      right: 20%;
+      bottom: 18%;
+      animation-delay: -3s;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(330px, 0.8fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(243, 214, 138, 0.25);
+      background: rgba(255, 248, 232, 0.06);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: var(--gold-2);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      box-shadow: inset 0 0 20px rgba(243, 214, 138, 0.04);
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(3.2rem, 8vw, 7.9rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+      max-width: 720px;
+      color: var(--soft-ivory);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.36;
+      margin-bottom: 20px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      overflow: hidden;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .gold-btn {
+      background: linear-gradient(135deg, #fff0ad, var(--gold-2), var(--gold), var(--bronze));
+      color: #130c10;
+      box-shadow: 0 18px 44px rgba(215, 174, 95, 0.26);
+    }
+
+    .ghost-btn {
+      border-color: rgba(243, 214, 138, 0.28);
+      background: rgba(255, 248, 232, 0.06);
+      color: var(--ivory);
+      backdrop-filter: blur(18px);
+    }
+
+    .ghost-btn:hover {
+      border-color: rgba(243, 214, 138, 0.48);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      color: rgba(255, 248, 232, 0.66);
+      font-size: 0.92rem;
+    }
+
+    .note-pill {
+      border: 1px solid rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.045);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    /* =========================================================
+       GODDESS VISUAL HERO
+    ========================================================= */
+
+    .goddess-visual {
+      position: relative;
+      min-height: 610px;
+      perspective: 1200px;
+    }
+
+    .temple-frame {
+      position: absolute;
+      inset: 40px 10px 10px;
+      border-radius: 48% 48% 28px 28px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 244, 188, 0.18), transparent 28%),
+        linear-gradient(145deg, rgba(255, 248, 232, 0.08), rgba(255, 248, 232, 0.025));
+      border: 1px solid rgba(243, 214, 138, 0.31);
+      box-shadow:
+        var(--shadow),
+        inset 0 0 70px rgba(243, 214, 138, 0.07);
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+
+    .temple-frame::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: inherit;
+      border: 1px solid rgba(243, 214, 138, 0.14);
+    }
+
+    .temple-figure {
+      position: absolute;
+      left: 50%;
+      bottom: 44px;
+      transform: translateX(-50%);
+      width: min(74%, 330px);
+      height: 440px;
+      border-radius: 46% 46% 30% 30%;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 248, 232, 0.92), rgba(243, 214, 138, 0.32) 22%, transparent 23%),
+        radial-gradient(circle at 50% 42%, rgba(217, 155, 140, 0.2), transparent 31%),
+        linear-gradient(160deg, rgba(11, 24, 48, 0.85), rgba(5, 4, 10, 0.86));
+      border: 1px solid rgba(243, 214, 138, 0.28);
+      box-shadow:
+        0 0 60px rgba(243, 214, 138, 0.12),
+        inset 0 0 70px rgba(217, 155, 140, 0.08);
+    }
+
+    .temple-figure::before {
+      content: "𓂀";
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      font-size: 3.8rem;
+      color: rgba(243, 214, 138, 0.9);
+      text-shadow: 0 0 24px rgba(243, 214, 138, 0.32);
+    }
+
+    .temple-figure::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 126px;
+      width: 190px;
+      height: 190px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background:
+        conic-gradient(from 90deg, transparent, rgba(243, 214, 138, 0.42), transparent, rgba(217, 155, 140, 0.25), transparent);
+      filter: blur(1px);
+      opacity: 0.65;
+      animation: slowSpin 18s linear infinite;
+    }
+
+    @keyframes slowSpin {
+      to {
+        transform: translateX(-50%) rotate(360deg);
+      }
+    }
+
+    .floating-card {
+      position: absolute;
+      width: 190px;
+      padding: 18px;
+      border: 1px solid rgba(243, 214, 138, 0.29);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255, 248, 232, 0.12), rgba(255, 248, 232, 0.045));
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      transform-style: preserve-3d;
+      animation: floatingCard 6s ease-in-out infinite alternate;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-family: "Cinzel", serif;
+      color: var(--gold-2);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .floating-card span {
+      display: block;
+      color: rgba(255, 248, 232, 0.72);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .floating-card.one {
+      top: 92px;
+      left: -6px;
+      transform: rotate(-7deg);
+    }
+
+    .floating-card.two {
+      right: -4px;
+      top: 210px;
+      transform: rotate(8deg);
+      animation-delay: -2s;
+    }
+
+    .floating-card.three {
+      left: 54px;
+      bottom: 50px;
+      transform: rotate(5deg);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatingCard {
+      from {
+        translate: 0 0;
+      }
+      to {
+        translate: 0 -18px;
+      }
+    }
+
+    /* =========================================================
+       CARDS / PANELS
+    ========================================================= */
+
+    .glass-panel {
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(255, 248, 232, 0.09), rgba(255, 248, 232, 0.035)),
+        radial-gradient(circle at 20% 0%, rgba(243, 214, 138, 0.08), transparent 35%);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-panel::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.045);
+      pointer-events: none;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .portrait-card {
+      min-height: 520px;
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(243, 214, 138, 0.18), transparent 32%),
+        radial-gradient(circle at 65% 64%, rgba(217, 155, 140, 0.16), transparent 30%),
+        linear-gradient(145deg, rgba(11, 24, 48, 0.8), rgba(5, 4, 10, 0.72));
+    }
+
+    .portrait-inner {
+      width: 100%;
+      border-radius: 26px;
+      border: 1px solid rgba(243, 214, 138, 0.18);
+      background: rgba(5, 4, 10, 0.44);
+      padding: 22px;
+    }
+
+    .portrait-symbol {
+      width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      color: #160e10;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold), var(--bronze));
+      box-shadow: 0 0 32px rgba(243, 214, 138, 0.25);
+    }
+
+    .portrait-inner h3 {
+      font-family: "Cinzel", serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .portrait-inner p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .content-card {
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    .content-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 3.5vw, 3.1rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .sig {
+      color: var(--gold-2);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      margin-top: 24px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .mini-feature {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(243, 214, 138, 0.14);
+    }
+
+    .mini-feature strong {
+      color: var(--gold-2);
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .mini-feature span {
+      color: rgba(255, 248, 232, 0.68);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    /* =========================================================
+       MOVEMENT SECTION
+    ========================================================= */
+
+    .movement-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .movement-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .movement-item {
+      display: flex;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid rgba(243, 214, 138, 0.14);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .movement-item:hover {
+      transform: translateX(5px);
+      border-color: rgba(243, 214, 138, 0.34);
+    }
+
+    .movement-item .icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(243, 214, 138, 0.12);
+      color: var(--gold-2);
+    }
+
+    .movement-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ivory);
+    }
+
+    .movement-item span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+
+    .dance-orbit {
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .orbit-ring {
+      width: min(100%, 430px);
+      aspect-ratio: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(243, 214, 138, 0.2);
+      background:
+        radial-gradient(circle, rgba(243, 214, 138, 0.13), transparent 32%),
+        conic-gradient(from 120deg, rgba(243, 214, 138, 0.34), transparent, rgba(217, 155, 140, 0.18), transparent, rgba(89, 195, 155, 0.16), transparent);
+      box-shadow: inset 0 0 70px rgba(243, 214, 138, 0.07);
+      animation: slowSpin 28s linear infinite;
+      position: relative;
+    }
+
+    .orbit-ring::before,
+    .orbit-ring::after {
+      content: "";
+      position: absolute;
+      inset: 42px;
+      border-radius: inherit;
+      border: 1px dashed rgba(243, 214, 138, 0.22);
+    }
+
+    .orbit-ring::after {
+      inset: 118px;
+      border-style: solid;
+      background: radial-gradient(circle, rgba(5,4,10,0.8), rgba(11,24,48,0.5));
+    }
+
+    .orbit-center {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,248,232,0.22), transparent 28%),
+        linear-gradient(135deg, rgba(243,214,138,0.18), rgba(217,155,140,0.08));
+      border: 1px solid rgba(243,214,138,0.3);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 28px;
+      box-shadow: 0 0 70px rgba(243,214,138,0.13);
+    }
+
+    .orbit-center strong {
+      font-family: "Cinzel", serif;
+      color: var(--gold-2);
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    /* =========================================================
+       GODDESS PATH CARDS
+    ========================================================= */
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 54px;
+      perspective: 1400px;
+    }
+
+    .goddess-card {
+      position: relative;
+      min-height: 330px;
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(243, 214, 138, 0.22);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(243, 214, 138, 0.13), transparent 30%),
+        linear-gradient(145deg, rgba(255, 248, 232, 0.105), rgba(255, 248, 232, 0.035));
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.33),
+        inset 0 0 40px rgba(255,255,255,0.025);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition:
+        transform 420ms ease,
+        border-color 420ms ease,
+        box-shadow 420ms ease;
+    }
+
+    .goddess-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background:
+        linear-gradient(135deg, transparent, rgba(243, 214, 138, 0.35), transparent, rgba(217, 155, 140, 0.2), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: -1;
+    }
+
+    .goddess-card::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -60px;
+      top: -60px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(243, 214, 138, 0.22), transparent 70%);
+      opacity: 0.75;
+    }
+
+    .goddess-card:hover {
+      transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+      border-color: rgba(243, 214, 138, 0.55);
+      box-shadow:
+        0 35px 85px rgba(0,0,0,0.46),
+        0 0 44px rgba(243, 214, 138, 0.12);
+    }
+
+    .goddess-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-symbol {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 28px;
+      background:
+        linear-gradient(135deg, rgba(243,214,138,0.22), rgba(217,155,140,0.08));
+      border: 1px solid rgba(243,214,138,0.28);
+      color: var(--gold-2);
+      font-size: 1.75rem;
+      box-shadow: inset 0 0 25px rgba(243,214,138,0.06);
+      transform: translateZ(30px);
+    }
+
+    .goddess-card h3 {
+      font-family: "Cinzel", serif;
+      font-size: 1.46rem;
+      margin-bottom: 12px;
+      transform: translateZ(24px);
+    }
+
+    .goddess-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 26px;
+      transform: translateZ(18px);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-2);
+      font-weight: 800;
+      font-size: 0.9rem;
+      transform: translateZ(22px);
+    }
+
+    .card-link span {
+      transition: transform var(--transition);
+    }
+
+    .goddess-card:hover .card-link span {
+      transform: translateX(4px);
+    }
+
+    /* =========================================================
+       BEAUTY RITUALS
+    ========================================================= */
+
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 45px;
+    }
+
+    .ritual-card {
+      padding: 34px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(243,214,138,0.18);
+      background:
+        linear-gradient(145deg, rgba(255,248,232,0.08), rgba(255,248,232,0.035));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ritual-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--ivory);
+    }
+
+    .ritual-card p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .ritual-card .tiny {
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .ritual-card::after {
+      content: "";
+      position: absolute;
+      right: -55px;
+      bottom: -55px;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(217,155,140,0.17), transparent 70%);
+    }
+
+    /* =========================================================
+       SIGNATURE SECRETS SECTION
+    ========================================================= */
+
+    .secrets {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .secrets-panel {
+      padding: clamp(34px, 7vw, 72px);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(243,214,138,0.17), transparent 38%),
+        radial-gradient(circle at 18% 80%, rgba(169,140,255,0.11), transparent 30%),
+        linear-gradient(145deg, rgba(255,248,232,0.09), rgba(255,248,232,0.03));
+    }
+
+    .offering-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 42px;
+      text-align: left;
+    }
+
+    .offering {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(5, 4, 10, 0.38);
+      border: 1px solid rgba(243,214,138,0.14);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .offering:hover {
+      transform: translateY(-6px);
+      border-color: rgba(243,214,138,0.35);
+    }
+
+    .offering strong {
+      display: block;
+      color: var(--gold-2);
+      margin-bottom: 8px;
+    }
+
+    .offering span {
+      color: rgba(255,248,232,0.68);
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    /* =========================================================
+       GALLERY / MOOD SECTION
+    ========================================================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .mood-card {
+      min-height: 280px;
+      border-radius: 28px;
+      border: 1px solid rgba(243,214,138,0.18);
+      background:
+        linear-gradient(160deg, rgba(255,248,232,0.1), rgba(255,248,232,0.02)),
+        radial-gradient(circle at 50% 24%, rgba(243,214,138,0.14), transparent 34%);
+      overflow: hidden;
+      position: relative;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 22px 52px rgba(0,0,0,0.28);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .mood-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(243,214,138,0.42);
+    }
+
+    .mood-card:nth-child(1),
+    .mood-card:nth-child(6) {
+      grid-column: span 2;
+    }
+
+    .mood-card:nth-child(2),
+    .mood-card:nth-child(3),
+    .mood-card:nth-child(4),
+    .mood-card:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    .mood-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mood-icon {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      font-size: 2.2rem;
+      color: rgba(243,214,138,0.7);
+      text-shadow: 0 0 25px rgba(243,214,138,0.2);
+    }
+
+    .mood-card h3 {
+      font-family: "Cinzel", serif;
+      color: var(--ivory);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mood-card p {
+      color: var(--muted);
+      line-height: 1.55;
+      position: relative;
+      z-index: 2;
+      font-size: 0.95rem;
+    }
+
+    /* =========================================================
+       SIGNUP
+    ========================================================= */
+
+    .signup-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .signup-box {
+      padding: clamp(30px, 5vw, 54px);
+    }
+
+    .signup-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .signup-form input {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 999px;
+      border: 1px solid rgba(243,214,138,0.2);
+      background: rgba(5,4,10,0.48);
+      color: var(--ivory);
+      padding: 0 20px;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .signup-form input:focus {
+      border-color: rgba(243,214,138,0.48);
+      box-shadow: 0 0 0 4px rgba(243,214,138,0.08);
+    }
+
+    .form-note {
+      color: rgba(255,248,232,0.58);
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .launch-card {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .launch-card .big-symbol {
+      font-size: 4.2rem;
+      color: var(--gold-2);
+      filter: drop-shadow(0 0 24px rgba(243,214,138,0.23));
+      margin-bottom: 30px;
+    }
+
+    .launch-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.4rem;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .launch-card p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      color: var(--gold-2);
+      border: 1px solid rgba(243,214,138,0.2);
+      background: rgba(243,214,138,0.08);
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq-wrap {
+      max-width: 900px;
+      margin: 48px auto 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(243,214,138,0.17);
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      border: 0;
+      background: transparent;
+      color: var(--ivory);
+      cursor: pointer;
+      text-align: left;
+      font-weight: 800;
+    }
+
+    .faq-question span:first-child {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.28rem;
+    }
+
+    .faq-plus {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(243,214,138,0.22);
+      color: var(--gold-2);
+      flex: 0 0 32px;
+      transition: transform var(--transition);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 360ms ease;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 24px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq-item.active .faq-plus {
+      transform: rotate(45deg);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      padding: 48px 0 34px;
+      border-top: 1px solid rgba(243,214,138,0.13);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .footer-brand h3 {
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.06em;
+      margin-bottom: 9px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: rgba(255,248,232,0.68);
+      font-size: 0.92rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      color: rgba(255,248,232,0.47);
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav.open .nav-links {
+        display: flex;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        border-radius: 24px;
+        border: 1px solid rgba(243,214,138,0.2);
+        background: rgba(5,4,10,0.92);
+        backdrop-filter: blur(22px);
+      }
+
+      .hero-grid,
+      .about-grid,
+      .movement-wrap,
+      .signup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 135px;
+      }
+
+      .goddess-visual {
+        min-height: 560px;
+        max-width: 560px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .path-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .offering-grid,
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mood-card:nth-child(n) {
+        grid-column: span 1;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav {
+        top: 10px;
+        width: min(100% - 20px, 1180px);
+      }
+
+      .brand-text strong {
+        font-size: 0.72rem;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: clamp(3.1rem, 17vw, 5rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.35rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-note {
+        gap: 8px;
+      }
+
+      .note-pill {
+        width: 100%;
+      }
+
+      .goddess-visual {
+        min-height: 500px;
+      }
+
+      .floating-card {
+        width: 160px;
+        padding: 14px;
+      }
+
+      .floating-card.one {
+        left: -4px;
+        top: 80px;
+      }
+
+      .floating-card.two {
+        right: -3px;
+        top: 200px;
+      }
+
+      .floating-card.three {
+        left: 22px;
+        bottom: 42px;
+      }
+
+      .temple-figure {
+        height: 380px;
+      }
+
+      .path-grid,
+      .ritual-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .goddess-card {
+        min-height: auto;
+      }
+
+      .portrait-card {
+        min-height: 420px;
+      }
+
+      .dance-orbit {
+        min-height: 410px;
+      }
+
+      .orbit-center {
+        width: 180px;
+        height: 180px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated background particles are created by JavaScript -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <div class="page">
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#top" class="brand" aria-label="Secrets of the Goddesses home">
+          <div class="brand-mark">S</div>
+          <div class="brand-text">
+            <strong>Secrets of the Goddesses</strong>
+            <span>by Heaven’s Reflection</span>
+          </div>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#movement">Movement</a>
+          <a href="#paths">Goddess Paths</a>
+          <a href="#rituals">Beauty</a>
+          <a href="#secrets">Offerings</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <a href="#waitlist" class="nav-cta">Join the Goddess List</a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation">
+          ✦
+        </button>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <header class="hero" id="top">
+      <div class="orb gold"></div>
+      <div class="orb rose"></div>
+      <div class="orb amethyst"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-kicker">A feminine temple of beauty, movement & becoming</div>
+
+          <h1 class="hero-title">
+            Enter the <span class="gold">Goddess</span> Within.
+          </h1>
+
+          <p class="hero-subtitle">
+            A sacred, sensual, and elegant world of belly dance, beauty rituals,
+            feminine presence, glow-up energy, and soft-power transformation.
+          </p>
+
+          <p class="hero-copy">
+            Created by Kimaada, also known as Heaven’s Reflection, Secrets of the
+            Goddesses is where movement becomes prayer, beauty becomes ritual,
+            confidence becomes presence, and a woman remembers the grace, fire,
+            softness, and royalty already living inside her.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn gold-btn">Enter the Goddess Temple</a>
+            <a href="#paths" class="btn ghost-btn">Explore the Flow</a>
+          </div>
+
+          <div class="hero-note">
+            <div class="note-pill">Belly dance & feminine movement</div>
+            <div class="note-pill">Beauty rituals & glow-up guides</div>
+            <div class="note-pill">Confidence, elegance & healing</div>
+          </div>
+        </div>
+
+        <div class="goddess-visual reveal" aria-label="Abstract goddess temple visual">
+          <div class="temple-frame">
+            <div class="temple-figure"></div>
+          </div>
+
+          <div class="floating-card one">
+            <strong>Movement</strong>
+            <span>Rhythm, posture, grace, hips, softness, and feminine flow.</span>
+          </div>
+
+          <div class="floating-card two">
+            <strong>Beauty</strong>
+            <span>Hair, skin, jewelry, fragrance, glow, and sacred self-care.</span>
+          </div>
+
+          <div class="floating-card three">
+            <strong>Presence</strong>
+            <span>A woman who walks like she remembers who she is.</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         ABOUT KIMAADA
+    ====================================================== -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="glass-panel portrait-card reveal">
+          <div class="portrait-inner">
+            <div class="portrait-symbol">✧</div>
+            <h3>Kimaada</h3>
+            <p>
+              Heaven’s Reflection — a woman of rhythm, beauty, prayer, grace,
+              softness, strength, and divine feminine presence.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-panel content-card reveal">
+          <div class="eyebrow">About Heaven’s Reflection</div>
+
+          <h2 class="section-title">
+            A woman’s glow is not only seen. <span class="gold">It is felt.</span>
+          </h2>
+
+          <p>
+            Kimaada, known as Heaven’s Reflection, brings together the worlds of
+            belly dance, feminine movement, beauty, style, self-care, and soulful
+            confidence. Her presence is soft but powerful, graceful but alive,
+            spiritual but grounded, elegant but deeply human.
+          </p>
+
+          <p>
+            Secrets of the Goddesses is not about becoming someone else. It is
+            about returning to the woman you were always meant to recognize —
+            the one with rhythm in her body, light in her face, softness in her
+            spirit, and royalty in the way she carries herself.
+          </p>
+
+          <p>
+            This is a place for the woman who wants to feel beautiful again,
+            move beautifully again, care for herself with intention, and step
+            into her own sacred feminine atmosphere.
+          </p>
+
+          <div class="feature-row">
+            <div class="mini-feature">
+              <strong>Grace</strong>
+              <span>Movement that softens the body and awakens feminine flow.</span>
+            </div>
+
+            <div class="mini-feature">
+              <strong>Glow</strong>
+              <span>Beauty rituals that feel luxurious, peaceful, and personal.</span>
+            </div>
+
+            <div class="mini-feature">
+              <strong>Presence</strong>
+              <span>Confidence that does not beg to be noticed — it simply arrives.</span>
+            </div>
+          </div>
+
+          <div class="sig">“Your beauty is not loud. It is luminous.”</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BELLY DANCE & FEMININE MOVEMENT
+    ====================================================== -->
+    <section class="section" id="movement">
+      <div class="container movement-wrap">
+        <div class="content-card reveal">
+          <div class="eyebrow">Belly Dance & Feminine Movement</div>
+
+          <h2 class="section-title">
+            Rhythm, posture, sensual grace, and <span class="gold">feminine expression.</span>
+          </h2>
+
+          <p class="section-copy">
+            Belly dance is more than steps. It is a conversation between the
+            body and the spirit. It teaches a woman how to stand taller, soften
+            deeper, move with rhythm, carry beauty through her posture, and feel
+            at home in her own presence.
+          </p>
+
+          <div class="movement-list">
+            <div class="movement-item">
+              <div class="icon">☾</div>
+              <div>
+                <strong>Confidence through the body</strong>
+                <span>Movement that helps a woman feel expressive, elegant, grounded, and alive.</span>
+              </div>
+            </div>
+
+            <div class="movement-item">
+              <div class="icon">✧</div>
+              <div>
+                <strong>Grace, rhythm, and softness</strong>
+                <span>Hips, arms, posture, curves, musicality, and feminine control.</span>
+              </div>
+            </div>
+
+            <div class="movement-item">
+              <div class="icon">♕</div>
+              <div>
+                <strong>Future classes and programs</strong>
+                <span>Online flows, beginner-friendly lessons, goddess movement guides, and feminine presence practices may be offered as the temple opens.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dance-orbit reveal">
+          <div class="orbit-ring"></div>
+          <div class="orbit-center">
+            <strong>Movement becomes beauty when the soul is invited in.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CHOOSE YOUR GODDESS PATH
+    ====================================================== -->
+    <section class="section" id="paths">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">Choose Your Goddess Path</div>
+
+          <h2 class="section-title">
+            Every woman carries many forms of <span class="gold">divine beauty.</span>
+          </h2>
+
+          <p class="section-copy">
+            These paths are invitations — not boxes. A woman may be the dancer,
+            the beauty, the queen, the mystic, the muse, and the phoenix all in
+            the same breath.
+          </p>
+        </div>
+
+        <div class="path-grid">
+          <article class="goddess-card reveal">
+            <div class="card-symbol">💃</div>
+            <h3>The Dancer</h3>
+            <p>
+              Belly dance, rhythm, posture, sensual movement, feminine flow, and
+              the sacred confidence of a body that feels free.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+
+          <article class="goddess-card reveal">
+            <div class="card-symbol">✦</div>
+            <h3>The Beauty</h3>
+            <p>
+              Hair, skin, glow rituals, fragrance, softness, feminine care, and
+              the quiet luxury of tending to yourself with love.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+
+          <article class="goddess-card reveal">
+            <div class="card-symbol">♕</div>
+            <h3>The Queen</h3>
+            <p>
+              Style, jewelry, elegance, confidence, posture, and the art of
+              entering every room already crowned from within.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+
+          <article class="goddess-card reveal">
+            <div class="card-symbol">☽</div>
+            <h3>The Mystic</h3>
+            <p>
+              Prayer, intention, sacred self-care, softness, spiritual femininity,
+              and beauty rituals that feel peaceful and personal.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+
+          <article class="goddess-card reveal">
+            <div class="card-symbol">❧</div>
+            <h3>The Muse</h3>
+            <p>
+              Creativity, expression, softness, magnetism, artistry, and the
+              feminine atmosphere that makes life feel poetic again.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+
+          <article class="goddess-card reveal">
+            <div class="card-symbol">🔥</div>
+            <h3>The Phoenix</h3>
+            <p>
+              Transformation, healing, rebirth, remembering herself, and rising
+              with more grace, beauty, and wisdom than before.
+            </p>
+            <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BEAUTY RITUALS & GODDESS GLOW
+    ====================================================== -->
+    <section class="section" id="rituals">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">Beauty Rituals & Goddess Glow</div>
+
+          <h2 class="section-title">
+            Sacred self-care for the woman who wants to <span class="gold">feel beautiful again.</span>
+          </h2>
+
+          <p class="section-copy">
+            Beauty is not vanity when it is rooted in love. It becomes ritual,
+            reflection, preparation, and the gentle reminder that how a woman
+            tends to herself matters.
+          </p>
+        </div>
+
+        <div class="ritual-grid">
+          <div class="ritual-card reveal">
+            <div class="tiny">Hair & Softness</div>
+            <h3>Crown rituals</h3>
+            <p>
+              Hair care, flowy feminine styling, goddess-inspired looks, beauty
+              preparation, and the feeling of carrying your crown with softness
+              and intention.
+            </p>
+          </div>
+
+          <div class="ritual-card reveal">
+            <div class="tiny">Skin & Glow</div>
+            <h3>Luminous care</h3>
+            <p>
+              Gentle glow-up routines, skin-loving rituals, body care, softness,
+              fragrance, and the little details that help a woman feel radiant
+              in her own atmosphere.
+            </p>
+          </div>
+
+          <div class="ritual-card reveal">
+            <div class="tiny">Jewelry & Style</div>
+            <h3>The finishing magic</h3>
+            <p>
+              Gold touches, stones, sparkle, fabrics, heels, flowing pieces,
+              dark feminine elegance, and the styling choices that make presence
+              feel intentional.
+            </p>
+          </div>
+
+          <div class="ritual-card reveal">
+            <div class="tiny">Daily Feminine Flow</div>
+            <h3>Beauty as a rhythm</h3>
+            <p>
+              Simple rituals for movement, prayer, posture, mood, beauty,
+              softness, confidence, and becoming the woman you want to meet in
+              the mirror.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECRETS OF THE GODDESSES / OFFERINGS
+    ====================================================== -->
+    <section class="section secrets" id="secrets">
+      <div class="container">
+        <div class="glass-panel secrets-panel reveal">
+          <div class="eyebrow">Secrets of the Goddesses</div>
+
+          <h2 class="section-title">
+            The temple is opening <span class="gold">one secret at a time.</span>
+          </h2>
+
+          <p class="section-copy">
+            This brand is being created as a premium home for feminine movement,
+            goddess beauty, glow-up content, elegant self-care, soulful
+            confidence, and future digital offerings for women who are ready to
+            return to themselves with beauty and grace.
+          </p>
+
+          <div class="offering-grid">
+            <div class="offering">
+              <strong>Dance Programs</strong>
+              <span>Belly dance flows, beginner-friendly lessons, feminine posture, rhythm, and expressive movement.</span>
+            </div>
+
+            <div class="offering">
+              <strong>Beauty Guides</strong>
+              <span>Hair, skin, jewelry, fragrance, softness, styling, and goddess glow-up inspiration.</span>
+            </div>
+
+            <div class="offering">
+              <strong>Digital Courses</strong>
+              <span>Future guided experiences for movement, self-care, presence, beauty, and feminine confidence.</span>
+            </div>
+
+            <div class="offering">
+              <strong>Product Recommendations</strong>
+              <span>Curated beauty, style, self-care, jewelry, hair, and feminine lifestyle favorites.</span>
+            </div>
+
+            <div class="offering">
+              <strong>Private Community</strong>
+              <span>A possible sacred space for women to grow, glow, move, share, and feel supported.</span>
+            </div>
+
+            <div class="offering">
+              <strong>Goddess Rituals</strong>
+              <span>Prayerful, graceful, grounded self-care practices that make everyday life feel more intentional.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         VISUAL GALLERY / MOOD
+    ====================================================== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">The Mood</div>
+
+          <h2 class="section-title">
+            A living gallery of <span class="gold">feminine becoming.</span>
+          </h2>
+
+          <p class="section-copy">
+            Dance. Beauty. Style. Rituals. Confidence. Transformation. Each one
+            is a doorway back into the woman who feels graceful, magnetic, and
+            at peace with her own light.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="mood-card reveal">
+            <div class="mood-icon">💃</div>
+            <h3>Dance</h3>
+            <p>Rhythm, hips, arms, posture, expression, and flow.</p>
+          </div>
+
+          <div class="mood-card reveal">
+            <div class="mood-icon">✧</div>
+            <h3>Beauty</h3>
+            <p>Glow rituals, soft skin, hair care, fragrance, and radiance.</p>
+          </div>
+
+          <div class="mood-card reveal">
+            <div class="mood-icon">♕</div>
+            <h3>Style</h3>
+            <p>Jewelry, heels, fabrics, dark feminine elegance, and presence.</p>
+          </div>
+
+          <div class="mood-card reveal">
+            <div class="mood-icon">☾</div>
+            <h3>Rituals</h3>
+            <p>Prayer, intention, self-care, softness, and sacred atmosphere.</p>
+          </div>
+
+          <div class="mood-card reveal">
+            <div class="mood-icon">✦</div>
+            <h3>Confidence</h3>
+            <p>The quiet power of a woman who remembers her worth.</p>
+          </div>
+
+          <div class="mood-card reveal">
+            <div class="mood-icon">🔥</div>
+            <h3>Transformation</h3>
+            <p>Healing, rebirth, grace, glow, and becoming her again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EMAIL SIGNUP / WAITLIST
+    ====================================================== -->
+    <section class="section" id="waitlist">
+      <div class="container signup-grid">
+        <div class="glass-panel signup-box reveal">
+          <div class="eyebrow">Join the Goddess List</div>
+
+          <h2 class="section-title">
+            Be first to enter when the <span class="gold">temple doors open.</span>
+          </h2>
+
+          <p class="section-copy">
+            Join the list for future dance flows, beauty rituals, goddess guides,
+            product favorites, soft luxury inspiration, and new offerings from
+            Kimaada, Heaven’s Reflection.
+          </p>
+
+          <!--
+            Replace this demo form later with:
+            - Web3Forms
+            - Mailchimp
+            - ConvertKit
+            - Carrd form
+            - Make webhook
+          -->
+          <form class="signup-form" id="signupForm">
+            <div class="form-row">
+              <input type="email" id="emailInput" placeholder="Enter your email address" required />
+              <button class="btn gold-btn" type="submit">Join the List</button>
+            </div>
+
+            <p class="form-note">
+              No pressure. No noise. Just graceful updates when new goddess
+              offerings, rituals, guides, and programs are ready.
+            </p>
+
+            <div class="success-message" id="successMessage">
+              You’re on the goddess list. The temple has received your light.
+            </div>
+          </form>
+        </div>
+
+        <div class="glass-panel launch-card reveal">
+          <div>
+            <div class="big-symbol">𓂀</div>
+            <h3>Soft launch energy. Premium goddess world.</h3>
+            <p>
+              This is the beginning of a brand that can grow into classes,
+              guides, courses, recommendations, community, rituals, and a full
+              feminine transformation experience.
+            </p>
+          </div>
+
+          <a href="#paths" class="btn ghost-btn" style="margin-top: 28px;">View the Goddess Paths</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">Questions</div>
+
+          <h2 class="section-title">
+            Before you step into the <span class="gold">temple.</span>
+          </h2>
+
+          <p class="section-copy">
+            A few answers for the woman who feels called to the movement,
+            beauty, elegance, and self-care world of Secrets of the Goddesses.
+          </p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>What is Secrets of the Goddesses?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Secrets of the Goddesses is a feminine movement, beauty,
+                self-care, and goddess lifestyle brand created by Kimaada,
+                Heaven’s Reflection. It blends belly dance, elegance, beauty
+                rituals, spiritual femininity, confidence, and transformation.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Who is this brand for?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                It is for women who want to feel more graceful, beautiful,
+                confident, soft, expressive, and connected to their feminine
+                presence. It is for beginners, returning dancers, beauty lovers,
+                spiritual women, and anyone who wants to glow from the inside out.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Do I need belly dance experience?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No. Future movement content may include beginner-friendly flows,
+                posture work, rhythm, feminine expression, and gentle ways to
+                reconnect with your body. The heart of the brand is grace,
+                confidence, and expression — not perfection.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Will there be beauty content too?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. The brand can grow into hair, skin, jewelry, fragrance,
+                style, glow-up routines, beauty guides, and product favorites —
+                all curated through a feminine, elegant, goddess-inspired lens.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Will Kimaada offer classes or programs?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                That is the vision. Offerings may include online dance programs,
+                feminine movement classes, digital beauty guides, rituals,
+                courses, and community experiences as the brand develops.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Will products be sold or recommended?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Product recommendations may be included in the future, especially
+                around hair, skin, beauty, jewelry, self-care, style, and feminine
+                lifestyle items. Any recommendations should feel aligned,
+                tasteful, and useful — not random or cluttered.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>Secrets of the Goddesses</h3>
+            <p>
+              A feminine temple of belly dance, beauty rituals, elegance,
+              confidence, spiritual softness, and goddess self-care by Kimaada,
+              Heaven’s Reflection.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#movement">Movement</a>
+            <a href="#paths">Paths</a>
+            <a href="#rituals">Beauty</a>
+            <a href="#waitlist">Waitlist</a>
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          © <span id="year"></span> Secrets of the Goddesses. All rights reserved.
+          Content on this website is for inspiration, beauty, movement, lifestyle,
+          and personal growth purposes only. It does not provide medical,
+          financial, or guaranteed transformation claims.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /* =========================================================
+       SECRETS OF THE GODDESSES JAVASCRIPT
+       Lightweight interactions:
+       - animated particles
+       - mobile nav
+       - reveal on scroll
+       - FAQ accordion
+       - demo waitlist message
+       - card mouse tilt
+    ========================================================= */
+
+    const particleContainer = document.getElementById("particles");
+    const particleCount = 72;
+
+    function createParticles() {
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("span");
+        particle.classList.add("particle");
+
+        const size = Math.random() * 3 + 1;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 8;
+        const duration = Math.random() * 9 + 8;
+        const opacity = Math.random() * 0.65 + 0.2;
+
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${left}%`;
+        particle.style.bottom = `${Math.random() * 100 - 20}%`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.opacity = opacity;
+
+        particleContainer.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    /* Mobile navigation */
+    const nav = document.getElementById("nav");
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    mobileToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      });
+    });
+
+    /* Scroll reveal */
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    /* FAQ accordion */
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        faqItems.forEach((otherItem) => {
+          otherItem.classList.remove("active");
+          const otherAnswer = otherItem.querySelector(".faq-answer");
+          otherAnswer.style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    /* Demo waitlist form */
+    const signupForm = document.getElementById("signupForm");
+    const emailInput = document.getElementById("emailInput");
+    const successMessage = document.getElementById("successMessage");
+
+    signupForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!emailInput.value.trim()) return;
+
+      successMessage.classList.add("show");
+      emailInput.value = "";
+
+      setTimeout(() => {
+        successMessage.classList.remove("show");
+      }, 5200);
+    });
+
+    /* Current year */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* CSS-only-like 3D card tilt enhanced with tiny JS */
+    const cards = document.querySelectorAll(".goddess-card");
+
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+
+        card.style.transform = `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  </script>
+</body>
+</html>
