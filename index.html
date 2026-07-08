@@ -198,56 +198,60 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 25;
+      z-index: 1;
       overflow: hidden;
-      mix-blend-mode: screen;
-      opacity: 1;
+      mix-blend-mode: normal;
+      opacity: 0.58;
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
     }
 
     .particle {
       position: absolute;
-      width: 4px;
-      height: 4px;
+      width: 3px;
+      height: 3px;
       border-radius: 999px;
-      background: radial-gradient(circle, #fffdf0 0%, var(--gold-2) 42%, transparent 72%);
+      background: radial-gradient(circle, rgba(255, 253, 240, 0.95) 0%, rgba(243, 214, 138, 0.85) 42%, transparent 72%);
       box-shadow:
-        0 0 10px rgba(243, 214, 138, 0.95),
-        0 0 24px rgba(243, 214, 138, 0.55),
-        0 0 42px rgba(217, 155, 140, 0.22);
+        0 0 6px rgba(243, 214, 138, 0.62),
+        0 0 14px rgba(243, 214, 138, 0.28);
       opacity: 0;
       will-change: transform, opacity, filter;
       animation:
         floatParticle linear infinite,
-        twinkle 2.6s ease-in-out infinite alternate;
+        twinkle 2.8s ease-in-out infinite alternate;
     }
 
     @keyframes floatParticle {
       0% {
-        transform: translate3d(0, 36px, 0) scale(0.65);
+        transform: translate3d(0, 28px, 0) scale(0.72);
         opacity: 0;
       }
 
-      10% {
-        opacity: 1;
+      12% {
+        opacity: 0.72;
       }
 
-      55% {
-        opacity: 0.92;
+      62% {
+        opacity: 0.56;
       }
 
       100% {
-        transform: translate3d(28px, -125vh, 0) scale(1.35);
+        transform: translate3d(18px, -118vh, 0) scale(1.05);
         opacity: 0;
       }
     }
 
     @keyframes twinkle {
       0% {
-        filter: brightness(0.75);
+        filter: brightness(0.85);
       }
 
       100% {
-        filter: brightness(1.75);
+        filter: brightness(1.28);
       }
     }
 
@@ -1647,37 +1651,37 @@
     }
 
     /* =========================================================
-       MOBILE MAGIC PATCH
-       Makes the phone version clearly alive: faster orbit,
-       glowing center, bigger particles, floating cards.
+       MOBILE MAGIC PATCH — balanced version
+       Keeps the phone version alive without washing out the page.
+       Stars stay behind the content; cards/orbits still move.
     ========================================================= */
 
     @media (max-width: 640px) {
       .particles {
-        z-index: 25 !important;
-        opacity: 1 !important;
-        mix-blend-mode: screen;
+        z-index: 1 !important;
+        opacity: 0.42 !important;
+        mix-blend-mode: normal !important;
       }
 
       .particle {
-        width: 6px !important;
-        height: 6px !important;
+        width: 2.5px !important;
+        height: 2.5px !important;
+        background: radial-gradient(circle, rgba(255, 248, 214, 0.95) 0%, rgba(243, 214, 138, 0.72) 44%, transparent 72%);
         box-shadow:
-          0 0 14px rgba(243, 214, 138, 1),
-          0 0 34px rgba(243, 214, 138, 0.85),
-          0 0 62px rgba(217, 155, 140, 0.38);
+          0 0 5px rgba(243, 214, 138, 0.58),
+          0 0 11px rgba(243, 214, 138, 0.22);
       }
 
       .hero .orb.gold,
       .hero .orb.rose,
       .hero .orb.amethyst {
-        opacity: 1;
-        filter: blur(7px);
-        animation-duration: 3.8s;
+        opacity: 0.82;
+        filter: blur(10px);
+        animation-duration: 4.6s;
       }
 
       .floating-card {
-        animation: floatingCardMobile 3.2s ease-in-out infinite alternate;
+        animation: floatingCardMobile 3.8s ease-in-out infinite alternate;
         will-change: transform;
       }
 
@@ -1695,21 +1699,21 @@
 
       .orbit-ring {
         width: min(88vw, 360px);
-        animation: orbitSpin 7s linear infinite !important;
+        animation: orbitSpin 8s linear infinite !important;
         box-shadow:
-          inset 0 0 80px rgba(243, 214, 138, 0.1),
-          0 0 54px rgba(243, 214, 138, 0.12);
+          inset 0 0 70px rgba(243, 214, 138, 0.09),
+          0 0 38px rgba(243, 214, 138, 0.11);
       }
 
       .orbit-center {
         width: 176px;
         height: 176px;
-        animation: goddessPulse 2.8s ease-in-out infinite alternate;
+        animation: goddessPulse 3.1s ease-in-out infinite alternate;
         will-change: transform, box-shadow;
       }
 
       .goddess-card {
-        animation: mobileCardFloat 4.5s ease-in-out infinite alternate;
+        animation: mobileCardFloat 5.2s ease-in-out infinite alternate;
         will-change: transform;
       }
 
@@ -1726,27 +1730,27 @@
 
     @keyframes floatingCardMobile {
       0% {
-        transform: translateY(0) rotate(-2deg);
+        transform: translateY(0) rotate(-1.5deg);
       }
 
       100% {
-        transform: translateY(-18px) rotate(2deg);
+        transform: translateY(-14px) rotate(1.5deg);
       }
     }
 
     @keyframes goddessPulse {
       0% {
         box-shadow:
-          0 0 42px rgba(243, 214, 138, 0.12),
-          inset 0 0 22px rgba(243, 214, 138, 0.05);
+          0 0 34px rgba(243, 214, 138, 0.10),
+          inset 0 0 20px rgba(243, 214, 138, 0.05);
         transform: scale(1);
       }
 
       100% {
         box-shadow:
-          0 0 82px rgba(243, 214, 138, 0.28),
-          inset 0 0 38px rgba(243, 214, 138, 0.12);
-        transform: scale(1.04);
+          0 0 58px rgba(243, 214, 138, 0.20),
+          inset 0 0 32px rgba(243, 214, 138, 0.10);
+        transform: scale(1.025);
       }
     }
 
@@ -1756,7 +1760,7 @@
       }
 
       100% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
       }
     }
 
@@ -2466,18 +2470,18 @@
     ========================================================= */
 
     const particleContainer = document.getElementById("particles");
-    const particleCount = window.innerWidth <= 640 ? 170 : 95;
+    const particleCount = window.innerWidth <= 640 ? 58 : 95;
 
     function createParticles() {
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement("span");
         particle.classList.add("particle");
 
-       const size = window.innerWidth <= 640 ? Math.random() * 5 + 2 : Math.random() * 3 + 1;
+       const size = window.innerWidth <= 640 ? Math.random() * 1.8 + 1.4 : Math.random() * 3 + 1;
         const left = Math.random() * 100;
         const delay = Math.random() * 8;
-        const duration = window.innerWidth <= 640 ? Math.random() * 5 + 4.5 : Math.random() * 9 + 8;
-        const opacity = Math.random() * 0.65 + 0.2;
+        const duration = window.innerWidth <= 640 ? Math.random() * 7 + 8 : Math.random() * 9 + 8;
+        const opacity = window.innerWidth <= 640 ? Math.random() * 0.34 + 0.18 : Math.random() * 0.65 + 0.2;
 
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
