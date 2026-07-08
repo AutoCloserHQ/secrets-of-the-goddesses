@@ -2055,6 +2055,145 @@
       }
     }
 
+/* =========================================================
+   MACBOOK AIR / SMALL LAPTOP HERO FIX
+   Prevents oversized hero overlap on narrow desktop windows
+========================================================= */
+
+@media (max-width: 1280px) and (min-width: 981px) {
+  .container {
+    width: min(100% - 28px, var(--max));
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 125px;
+    padding-bottom: 70px;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.75fr);
+    gap: 28px;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 6.2vw, 5.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.16rem, 1.7vw, 1.5rem);
+    line-height: 1.35;
+    max-width: 600px;
+  }
+
+  .hero-copy {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    max-width: 580px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0 18px;
+  }
+
+  .goddess-visual {
+    min-height: 480px;
+    transform: scale(0.88);
+    transform-origin: center center;
+  }
+
+  .temple-frame {
+    inset: 35px 8px 8px;
+  }
+
+  .temple-figure {
+    height: 390px;
+  }
+
+  .floating-card {
+    width: 160px;
+    padding: 14px;
+  }
+
+  .floating-card span {
+    font-size: 0.76rem;
+  }
+
+  .floating-card.one {
+    left: 6px;
+    top: 95px;
+  }
+
+  .floating-card.two {
+    right: 4px;
+    top: 210px;
+  }
+
+  .floating-card.three {
+    left: 58px;
+    bottom: 55px;
+  }
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: 1fr 0.68fr;
+    gap: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 5.6vw, 5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.14rem;
+  }
+
+  .hero-copy {
+    font-size: 0.88rem;
+  }
+
+  .goddess-visual {
+    transform: scale(0.78);
+    min-height: 430px;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 981px) {
+  .hero {
+    padding-top: 105px;
+    padding-bottom: 45px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.4rem, 5.6vw, 5.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-copy {
+    font-size: 0.86rem;
+    line-height: 1.58;
+    margin-bottom: 22px;
+  }
+
+  .goddess-visual {
+    transform: scale(0.76);
+    min-height: 410px;
+  }
+}
+    
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
