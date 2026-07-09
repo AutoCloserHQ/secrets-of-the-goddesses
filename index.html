@@ -14,13 +14,13 @@
 
   <meta
     name="description"
-    content="Secrets of the Goddesses by Kimaada, Heaven’s Reflection — a feminine movement, belly dance, beauty, self-care, and goddess transformation brand."
+    content="Secrets of the Goddesses by Kimaada, Heaven’s Reflection — belly dance, feminine movement, beauty rituals, self-help, confidence, healing, purpose, and awakening the Goddess Within."
   />
 
   <meta property="og:title" content="Secrets of the Goddesses | Kimaada — Heaven’s Reflection" />
   <meta
     property="og:description"
-    content="Enter a feminine temple of movement, beauty rituals, elegance, confidence, sensual grace, and goddess self-care."
+    content="Awaken the Goddess Within through belly dance, beauty rituals, self-help, sacred confidence, healing, purpose, and feminine becoming."
   />
   <meta property="og:type" content="website" />
 
@@ -200,8 +200,8 @@
       pointer-events: none;
       z-index: 1;
       overflow: hidden;
-      mix-blend-mode: normal;
-      opacity: 0.58;
+      mix-blend-mode: screen;
+      opacity: 0.78;
     }
 
     .page {
@@ -211,13 +211,14 @@
 
     .particle {
       position: absolute;
-      width: 3px;
-      height: 3px;
+      width: 3.5px;
+      height: 3.5px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(255, 253, 240, 0.95) 0%, rgba(243, 214, 138, 0.85) 42%, transparent 72%);
+      background: radial-gradient(circle, rgba(255, 253, 240, 1) 0%, rgba(243, 214, 138, 0.95) 40%, transparent 72%);
       box-shadow:
-        0 0 6px rgba(243, 214, 138, 0.62),
-        0 0 14px rgba(243, 214, 138, 0.28);
+        0 0 9px rgba(243, 214, 138, 0.78),
+        0 0 20px rgba(243, 214, 138, 0.38),
+        0 0 34px rgba(217, 155, 140, 0.12);
       opacity: 0;
       will-change: transform, opacity, filter;
       animation:
@@ -1482,6 +1483,84 @@
       transform: translateY(0);
     }
 
+
+
+    /* =========================================================
+       GODDESS WITHIN SECTION
+    ========================================================= */
+
+    .within-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 46px;
+    }
+
+    .within-card {
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(243, 214, 138, 0.22);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(243,214,138,0.16), transparent 36%),
+        linear-gradient(145deg, rgba(255,248,232,0.08), rgba(255,248,232,0.035));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .within-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -85px;
+      bottom: -85px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(217,155,140,0.14), transparent 70%);
+    }
+
+    .within-card h3 {
+      position: relative;
+      z-index: 2;
+      font-family: "Cinzel", serif;
+      color: var(--gold-2);
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .within-card p {
+      position: relative;
+      z-index: 2;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    .within-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .within-point {
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid rgba(243,214,138,0.15);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .within-point strong {
+      display: block;
+      color: var(--gold-2);
+      margin-bottom: 7px;
+    }
+
+    .within-point span {
+      color: rgba(255,248,232,0.7);
+      line-height: 1.58;
+      font-size: 0.94rem;
+    }
+
+
     /* =========================================================
        RESPONSIVE
     ========================================================= */
@@ -1515,7 +1594,8 @@
       .hero-grid,
       .about-grid,
       .movement-wrap,
-      .signup-grid {
+      .signup-grid,
+      .within-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1659,17 +1739,18 @@
     @media (max-width: 640px) {
       .particles {
         z-index: 1 !important;
-        opacity: 0.42 !important;
-        mix-blend-mode: normal !important;
+        opacity: 0.72 !important;
+        mix-blend-mode: screen !important;
       }
 
       .particle {
-        width: 2.5px !important;
-        height: 2.5px !important;
-        background: radial-gradient(circle, rgba(255, 248, 214, 0.95) 0%, rgba(243, 214, 138, 0.72) 44%, transparent 72%);
+        width: 3.5px !important;
+        height: 3.5px !important;
+        background: radial-gradient(circle, rgba(255, 248, 214, 1) 0%, rgba(243, 214, 138, 0.92) 42%, transparent 72%);
         box-shadow:
-          0 0 5px rgba(243, 214, 138, 0.58),
-          0 0 11px rgba(243, 214, 138, 0.22);
+          0 0 8px rgba(243, 214, 138, 0.82),
+          0 0 18px rgba(243, 214, 138, 0.42),
+          0 0 28px rgba(217, 155, 140, 0.16);
       }
 
       .hero .orb.gold,
@@ -1803,16 +1884,17 @@
 
       .particles {
         z-index: 1 !important;
-        opacity: 0.48 !important;
+        opacity: 0.76 !important;
         mix-blend-mode: screen;
       }
 
       .particle {
-        width: 3px !important;
-        height: 3px !important;
+        width: 3.4px !important;
+        height: 3.4px !important;
         box-shadow:
-          0 0 6px rgba(243, 214, 138, 0.7),
-          0 0 14px rgba(243, 214, 138, 0.35) !important;
+          0 0 9px rgba(243, 214, 138, 0.88),
+          0 0 20px rgba(243, 214, 138, 0.48),
+          0 0 32px rgba(217, 155, 140, 0.16) !important;
       }
 
       .nav {
@@ -2055,145 +2137,6 @@
       }
     }
 
-/* =========================================================
-   MACBOOK AIR / SMALL LAPTOP HERO FIX
-   Prevents oversized hero overlap on narrow desktop windows
-========================================================= */
-
-@media (max-width: 1280px) and (min-width: 981px) {
-  .container {
-    width: min(100% - 28px, var(--max));
-  }
-
-  .hero {
-    min-height: auto;
-    padding-top: 125px;
-    padding-bottom: 70px;
-    overflow: hidden;
-  }
-
-  .hero-grid {
-    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.75fr);
-    gap: 28px;
-  }
-
-  .hero-title {
-    font-size: clamp(4rem, 6.2vw, 5.8rem);
-    line-height: 0.92;
-    letter-spacing: -0.055em;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1.16rem, 1.7vw, 1.5rem);
-    line-height: 1.35;
-    max-width: 600px;
-  }
-
-  .hero-copy {
-    font-size: 0.92rem;
-    line-height: 1.65;
-    max-width: 580px;
-  }
-
-  .hero-actions {
-    gap: 12px;
-  }
-
-  .btn {
-    min-height: 48px;
-    padding: 0 18px;
-  }
-
-  .goddess-visual {
-    min-height: 480px;
-    transform: scale(0.88);
-    transform-origin: center center;
-  }
-
-  .temple-frame {
-    inset: 35px 8px 8px;
-  }
-
-  .temple-figure {
-    height: 390px;
-  }
-
-  .floating-card {
-    width: 160px;
-    padding: 14px;
-  }
-
-  .floating-card span {
-    font-size: 0.76rem;
-  }
-
-  .floating-card.one {
-    left: 6px;
-    top: 95px;
-  }
-
-  .floating-card.two {
-    right: 4px;
-    top: 210px;
-  }
-
-  .floating-card.three {
-    left: 58px;
-    bottom: 55px;
-  }
-}
-
-@media (max-width: 1120px) and (min-width: 981px) {
-  .hero-grid {
-    grid-template-columns: 1fr 0.68fr;
-    gap: 18px;
-  }
-
-  .hero-title {
-    font-size: clamp(3.5rem, 5.6vw, 5rem);
-  }
-
-  .hero-subtitle {
-    font-size: 1.14rem;
-  }
-
-  .hero-copy {
-    font-size: 0.88rem;
-  }
-
-  .goddess-visual {
-    transform: scale(0.78);
-    min-height: 430px;
-  }
-}
-
-@media (max-height: 760px) and (min-width: 981px) {
-  .hero {
-    padding-top: 105px;
-    padding-bottom: 45px;
-  }
-
-  .hero-title {
-    font-size: clamp(3.4rem, 5.6vw, 5.2rem);
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 14px;
-  }
-
-  .hero-copy {
-    font-size: 0.86rem;
-    line-height: 1.58;
-    margin-bottom: 22px;
-  }
-
-  .goddess-visual {
-    transform: scale(0.76);
-    min-height: 410px;
-  }
-}
-    
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -2227,6 +2170,7 @@
 
         <div class="nav-links" id="navLinks">
           <a href="#about">About</a>
+          <a href="#goddess-within">Goddess Within</a>
           <a href="#movement">Movement</a>
           <a href="#paths">Goddess Paths</a>
           <a href="#rituals">Beauty</a>
@@ -2252,22 +2196,22 @@
 
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <div class="hero-kicker">A feminine temple of beauty, movement & becoming</div>
+          <div class="hero-kicker">A feminine temple of belly dance, beauty, healing & becoming</div>
 
           <h1 class="hero-title">
-            Enter the <span class="gold">Goddess</span> Within.
+            Awaken the <span class="gold">Goddess</span> Within.
           </h1>
 
           <p class="hero-subtitle">
-            A sacred, sensual, and elegant world of belly dance, beauty rituals,
-            feminine presence, glow-up energy, and soft-power transformation.
+            A sacred feminine world of belly dance, beauty rituals, self-discovery,
+            confidence, healing, purpose, and becoming the highest version of yourself.
           </p>
 
           <p class="hero-copy">
             Created by Kimaada, also known as Heaven’s Reflection, Secrets of the
-            Goddesses is where movement becomes prayer, beauty becomes ritual,
-            confidence becomes presence, and a woman remembers the grace, fire,
-            softness, and royalty already living inside her.
+            Goddesses is where movement becomes prayer, beauty becomes discipline,
+            self-care becomes healing, and a woman remembers her rhythm, softness,
+            strength, family, purpose, and divine feminine presence.
           </p>
 
           <div class="hero-actions">
@@ -2276,9 +2220,9 @@
           </div>
 
           <div class="hero-note">
-            <div class="note-pill">Belly dance & feminine movement</div>
-            <div class="note-pill">Beauty rituals & glow-up guides</div>
-            <div class="note-pill">Confidence, elegance & healing</div>
+            <div class="note-pill">Shimmies, figure eights & feminine flow</div>
+            <div class="note-pill">Beauty rituals & goddess glow-up guides</div>
+            <div class="note-pill">Self-help, family, purpose & healing</div>
           </div>
         </div>
 
@@ -2289,7 +2233,7 @@
 
           <div class="floating-card one">
             <strong>Movement</strong>
-            <span>Rhythm, posture, grace, hips, softness, and feminine flow.</span>
+            <span>Shimmies, hip circles, figure eights, posture, and feminine flow.</span>
           </div>
 
           <div class="floating-card two">
@@ -2298,8 +2242,8 @@
           </div>
 
           <div class="floating-card three">
-            <strong>Presence</strong>
-            <span>A woman who walks like she remembers who she is.</span>
+            <strong>Purpose</strong>
+            <span>A woman becoming better for herself, her family, and her calling.</span>
           </div>
         </div>
       </div>
@@ -2325,14 +2269,14 @@
           <div class="eyebrow">About Heaven’s Reflection</div>
 
           <h2 class="section-title">
-            A woman’s glow is not only seen. <span class="gold">It is felt.</span>
+            A woman’s glow is not only seen. <span class="gold">It is lived.</span>
           </h2>
 
           <p>
             Kimaada, known as Heaven’s Reflection, brings together the worlds of
-            belly dance, feminine movement, beauty, style, self-care, and soulful
-            confidence. Her presence is soft but powerful, graceful but alive,
-            spiritual but grounded, elegant but deeply human.
+            belly dance, feminine movement, beauty, style, self-help, self-care,
+            family, faith, and soulful confidence. Her presence is soft but powerful,
+            graceful but alive, spiritual but grounded, elegant but deeply human.
           </p>
 
           <p>
@@ -2344,14 +2288,15 @@
 
           <p>
             This is a place for the woman who wants to feel beautiful again,
-            move beautifully again, care for herself with intention, and step
-            into her own sacred feminine atmosphere.
+            move beautifully again, care for herself with intention, grow from the
+            inside out, and become the best version of herself for her spirit,
+            her purpose, and the people she loves.
           </p>
 
           <div class="feature-row">
             <div class="mini-feature">
               <strong>Grace</strong>
-              <span>Movement that softens the body and awakens feminine flow.</span>
+              <span>Movement that softens the body through rhythm, posture, and flow.</span>
             </div>
 
             <div class="mini-feature">
@@ -2361,7 +2306,7 @@
 
             <div class="mini-feature">
               <strong>Presence</strong>
-              <span>Confidence that does not beg to be noticed — it simply arrives.</span>
+              <span>Confidence that blesses her home, her family, and every room she enters.</span>
             </div>
           </div>
 
@@ -2369,6 +2314,60 @@
         </div>
       </div>
     </section>
+
+
+
+    <!-- =====================================================
+         THE GODDESS WITHIN
+    ====================================================== -->
+    <section class="section" id="goddess-within">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">The Goddess Within</div>
+
+          <h2 class="section-title">
+            Becoming her is sacred <span class="gold">inner work.</span>
+          </h2>
+
+          <p class="section-copy">
+            The Goddess Within is not about perfection. She is the woman who is
+            healing, learning, moving, praying, glowing, and choosing to rise into
+            the best version of herself — not only for her own peace, but for her
+            family, her future, her purpose, and the love she carries.
+          </p>
+        </div>
+
+        <div class="within-grid">
+          <div class="within-card reveal">
+            <h3>She is soft, but not weak.</h3>
+            <p>
+              She can be sensual and still sacred. Beautiful and still grounded.
+              Confident and still humble. Feminine and still powerful. This is the
+              woman who learns to move with grace, speak life over herself, and
+              carry peace into the atmosphere around her.
+            </p>
+          </div>
+
+          <div class="within-list reveal">
+            <div class="within-point">
+              <strong>For herself</strong>
+              <span>To feel radiant, confident, disciplined, peaceful, and connected to her body again.</span>
+            </div>
+
+            <div class="within-point">
+              <strong>For her family</strong>
+              <span>Because when a woman pours back into herself, she has more grace to pour into the people she loves.</span>
+            </div>
+
+            <div class="within-point">
+              <strong>For her purpose</strong>
+              <span>To become the woman her future requires — elegant, intentional, healed, expressive, and ready.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- =====================================================
          BELLY DANCE & FEMININE MOVEMENT
@@ -2379,14 +2378,14 @@
           <div class="eyebrow">Belly Dance & Feminine Movement</div>
 
           <h2 class="section-title">
-            Rhythm, posture, sensual grace, and <span class="gold">feminine expression.</span>
+            Shimmies, figure eights, rhythm, and <span class="gold">feminine expression.</span>
           </h2>
 
           <p class="section-copy">
-            Belly dance is more than steps. It is a conversation between the
-            body and the spirit. It teaches a woman how to stand taller, soften
-            deeper, move with rhythm, carry beauty through her posture, and feel
-            at home in her own presence.
+            Belly dance is more than steps. Through hip drops, hip lifts, maya,
+            omi circles, figure eights, undulations, snake arms, chest lifts,
+            wrist circles, graceful arms, and grounded posture, a woman learns
+            to reconnect with her rhythm, softness, sensual grace, and confidence.
           </p>
 
           <div class="movement-list">
@@ -2394,23 +2393,23 @@
               <div class="icon">☾</div>
               <div>
                 <strong>Confidence through the body</strong>
-                <span>Movement that helps a woman feel expressive, elegant, grounded, and alive.</span>
+                <span>Beginner-friendly movement that helps a woman feel expressive, elegant, grounded, and alive.</span>
               </div>
             </div>
 
             <div class="movement-item">
               <div class="icon">✧</div>
               <div>
-                <strong>Grace, rhythm, and softness</strong>
-                <span>Hips, arms, posture, curves, musicality, and feminine control.</span>
+                <strong>Technique, rhythm, and softness</strong>
+                <span>Shimmies, hip circles, figure eights, undulations, snake arms, isolations, musicality, and feminine control.</span>
               </div>
             </div>
 
             <div class="movement-item">
               <div class="icon">♕</div>
               <div>
-                <strong>Future classes and programs</strong>
-                <span>Online flows, beginner-friendly lessons, goddess movement guides, and feminine presence practices may be offered as the temple opens.</span>
+                <strong>Future lessons and programs</strong>
+                <span>Beginner, intermediate, and advanced YouTube lessons, online flows, goddess movement guides, and feminine presence practices may be offered as the temple opens.</span>
               </div>
             </div>
           </div>
@@ -2419,7 +2418,7 @@
         <div class="dance-orbit reveal">
           <div class="orbit-ring"></div>
           <div class="orbit-center">
-            <strong>Movement becomes beauty when the soul is invited in.</strong>
+            <strong>Movement becomes prayer when rhythm, beauty, and purpose meet.</strong>
           </div>
         </div>
       </div>
@@ -2439,8 +2438,8 @@
 
           <p class="section-copy">
             These paths are invitations — not boxes. A woman may be the dancer,
-            the beauty, the queen, the mystic, the muse, and the phoenix all in
-            the same breath.
+            the beauty, the queen, the healer, the muse, and the phoenix all in
+            the same breath as she becomes the woman God is shaping her to be.
           </p>
         </div>
 
@@ -2449,8 +2448,8 @@
             <div class="card-symbol">💃</div>
             <h3>The Dancer</h3>
             <p>
-              Belly dance, rhythm, posture, sensual movement, feminine flow, and
-              the sacred confidence of a body that feels free.
+              Shimmies, hip circles, figure eights, undulations, posture, musicality,
+              graceful arms, and the sacred confidence of a body that feels free.
             </p>
             <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
           </article>
@@ -2477,10 +2476,10 @@
 
           <article class="goddess-card reveal">
             <div class="card-symbol">☽</div>
-            <h3>The Mystic</h3>
+            <h3>The Healer</h3>
             <p>
-              Prayer, intention, sacred self-care, softness, spiritual femininity,
-              and beauty rituals that feel peaceful and personal.
+              Prayer, reflection, release, sacred self-care, emotional renewal,
+              and choosing peace while becoming whole again.
             </p>
             <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
           </article>
@@ -2499,8 +2498,8 @@
             <div class="card-symbol">🔥</div>
             <h3>The Phoenix</h3>
             <p>
-              Transformation, healing, rebirth, remembering herself, and rising
-              with more grace, beauty, and wisdom than before.
+              Self-help, discipline, transformation, healing, rebirth, remembering herself,
+              and rising with more grace, beauty, and wisdom than before.
             </p>
             <a href="#waitlist" class="card-link">Explore This Path <span>→</span></a>
           </article>
@@ -2521,9 +2520,9 @@
           </h2>
 
           <p class="section-copy">
-            Beauty is not vanity when it is rooted in love. It becomes ritual,
-            reflection, preparation, and the gentle reminder that how a woman
-            tends to herself matters.
+            Beauty is not vanity when it is rooted in love and intention. It becomes
+            ritual, reflection, preparation, and a gentle reminder that how a woman
+            tends to herself shapes how she shows up for her purpose and her home.
           </p>
         </div>
 
@@ -2585,15 +2584,15 @@
 
           <p class="section-copy">
             This brand is being created as a premium home for feminine movement,
-            goddess beauty, glow-up content, elegant self-care, soulful
-            confidence, and future digital offerings for women who are ready to
-            return to themselves with beauty and grace.
+            belly dance lessons, goddess beauty, glow-up content, elegant self-care,
+            soulful confidence, self-help reflections, and future digital offerings
+            for women who are ready to return to themselves with beauty and grace.
           </p>
 
           <div class="offering-grid">
             <div class="offering">
               <strong>Dance Programs</strong>
-              <span>Belly dance flows, beginner-friendly lessons, feminine posture, rhythm, and expressive movement.</span>
+              <span>Beginner, intermediate, and advanced belly dance flows with shimmies, figure eights, isolations, posture, rhythm, and expressive movement.</span>
             </div>
 
             <div class="offering">
@@ -2603,7 +2602,7 @@
 
             <div class="offering">
               <strong>Digital Courses</strong>
-              <span>Future guided experiences for movement, self-care, presence, beauty, and feminine confidence.</span>
+              <span>Future guided experiences for movement, self-care, presence, beauty, self-help, family, purpose, and feminine confidence.</span>
             </div>
 
             <div class="offering">
@@ -2618,7 +2617,7 @@
 
             <div class="offering">
               <strong>Goddess Rituals</strong>
-              <span>Prayerful, graceful, grounded self-care practices that make everyday life feel more intentional.</span>
+              <span>Prayerful, graceful, grounded self-care practices that make everyday life feel more intentional, peaceful, and purpose-led.</span>
             </div>
           </div>
         </div>
@@ -2638,9 +2637,9 @@
           </h2>
 
           <p class="section-copy">
-            Dance. Beauty. Style. Rituals. Confidence. Transformation. Each one
-            is a doorway back into the woman who feels graceful, magnetic, and
-            at peace with her own light.
+            Dance. Beauty. Style. Rituals. Confidence. Transformation. Self-help.
+            Family. Purpose. Each one is a doorway back into the woman who feels
+            graceful, magnetic, and at peace with her own light.
           </p>
         </div>
 
@@ -2648,7 +2647,7 @@
           <div class="mood-card reveal">
             <div class="mood-icon">💃</div>
             <h3>Dance</h3>
-            <p>Rhythm, hips, arms, posture, expression, and flow.</p>
+            <p>Shimmies, figure eights, undulations, arms, posture, expression, and flow.</p>
           </div>
 
           <div class="mood-card reveal">
@@ -2672,7 +2671,7 @@
           <div class="mood-card reveal">
             <div class="mood-icon">✦</div>
             <h3>Confidence</h3>
-            <p>The quiet power of a woman who remembers her worth.</p>
+            <p>The quiet power of a woman who remembers her worth and walks in purpose.</p>
           </div>
 
           <div class="mood-card reveal">
@@ -2697,9 +2696,10 @@
           </h2>
 
           <p class="section-copy">
-            Join the list for future dance flows, beauty rituals, goddess guides,
-            product favorites, soft luxury inspiration, and new offerings from
-            Kimaada, Heaven’s Reflection.
+            Join the list for future belly dance lessons, beauty rituals, goddess
+            guides, self-help reflections, product favorites, family-centered
+            encouragement, soft luxury inspiration, and new offerings from Kimaada,
+            Heaven’s Reflection.
           </p>
 
           <!--
@@ -2717,8 +2717,8 @@
             </div>
 
             <p class="form-note">
-              No pressure. No noise. Just graceful updates when new goddess
-              offerings, rituals, guides, and programs are ready.
+              No pressure. No noise. Just graceful updates when new goddess offerings,
+              belly dance lessons, rituals, guides, self-help reflections, and programs are ready.
             </p>
 
             <div class="success-message" id="successMessage">
@@ -2732,9 +2732,9 @@
             <div class="big-symbol">𓂀</div>
             <h3>Soft launch energy. Premium goddess world.</h3>
             <p>
-              This is the beginning of a brand that can grow into classes,
-              guides, courses, recommendations, community, rituals, and a full
-              feminine transformation experience.
+              This is the beginning of a brand that can grow into YouTube lessons,
+              classes, guides, courses, recommendations, community, rituals, and a full
+              feminine transformation experience rooted in movement, beauty, family, and purpose.
             </p>
           </div>
 
@@ -2770,9 +2770,10 @@
             <div class="faq-answer">
               <p>
                 Secrets of the Goddesses is a feminine movement, beauty,
-                self-care, and goddess lifestyle brand created by Kimaada,
+                self-care, self-help, and goddess lifestyle brand created by Kimaada,
                 Heaven’s Reflection. It blends belly dance, elegance, beauty
-                rituals, spiritual femininity, confidence, and transformation.
+                rituals, spiritual femininity, confidence, healing, family, purpose,
+                and becoming the Goddess Within.
               </p>
             </div>
           </div>
@@ -2800,9 +2801,9 @@
             <div class="faq-answer">
               <p>
                 No. Future movement content may include beginner-friendly flows,
-                posture work, rhythm, feminine expression, and gentle ways to
-                reconnect with your body. The heart of the brand is grace,
-                confidence, and expression — not perfection.
+                posture work, hip drops, figure eights, shimmies, undulations,
+                snake arms, rhythm, feminine expression, and gentle ways to reconnect
+                with your body. The heart of the brand is grace, confidence, and expression — not perfection.
               </p>
             </div>
           </div>
@@ -2828,9 +2829,10 @@
             </button>
             <div class="faq-answer">
               <p>
-                That is the vision. Offerings may include online dance programs,
-                feminine movement classes, digital beauty guides, rituals,
-                courses, and community experiences as the brand develops.
+                That is the vision. Offerings may include YouTube lessons, online dance
+                programs, beginner/intermediate/advanced lesson libraries, feminine movement
+                classes, digital beauty guides, self-help reflections, rituals, courses,
+                and community experiences as the brand develops.
               </p>
             </div>
           </div>
@@ -2862,8 +2864,8 @@
           <div class="footer-brand">
             <h3>Secrets of the Goddesses</h3>
             <p>
-              A feminine temple of belly dance, beauty rituals, elegance,
-              confidence, spiritual softness, and goddess self-care by Kimaada,
+              A feminine temple of belly dance, beauty rituals, self-help, elegance,
+              confidence, spiritual softness, family, purpose, and awakening the Goddess Within by Kimaada,
               Heaven’s Reflection.
             </p>
           </div>
@@ -2900,18 +2902,18 @@
     ========================================================= */
 
     const particleContainer = document.getElementById("particles");
-    const particleCount = window.innerWidth <= 640 ? 42 : 95;
+    const particleCount = window.innerWidth <= 640 ? 95 : 120;
 
     function createParticles() {
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement("span");
         particle.classList.add("particle");
 
-       const size = window.innerWidth <= 640 ? Math.random() * 1.8 + 1.4 : Math.random() * 3 + 1;
+       const size = window.innerWidth <= 640 ? Math.random() * 2.4 + 2.0 : Math.random() * 3.2 + 1.2;
         const left = Math.random() * 100;
-        const delay = Math.random() * 8;
-        const duration = window.innerWidth <= 640 ? Math.random() * 7 + 8 : Math.random() * 9 + 8;
-        const opacity = window.innerWidth <= 640 ? Math.random() * 0.34 + 0.18 : Math.random() * 0.65 + 0.2;
+        const delay = Math.random() * 7;
+        const duration = window.innerWidth <= 640 ? Math.random() * 5 + 6 : Math.random() * 9 + 8;
+        const opacity = window.innerWidth <= 640 ? Math.random() * 0.38 + 0.42 : Math.random() * 0.65 + 0.28;
 
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
