@@ -292,7 +292,11 @@ footer p:last-child { justify-self: end; }
   .eyebrow, .hero-actions { justify-content: center; }
   .hero-intro { margin-left: auto; margin-right: auto; }
   .hero-visual { justify-self: center; width: min(76vw, 520px); margin-top: 20px; }
-  .scroll-cue { display: none; }
+  ..scroll-cue {
+  display: flex;
+  bottom: 14px;
+  opacity: .8;
+}
   .section { padding: 105px 0; }
   .section-heading { grid-template-columns: 1fr; gap: 28px; text-align: center; }
   .section-heading .eyebrow { justify-content: center; }
@@ -382,7 +386,7 @@ footer p:last-child { justify-self: end; }
 
         <div class="hero-copy reveal">
           <p class="eyebrow"><span></span>A living sanctuary for feminine expression</p>
-          <h1>Remember the<br><em>goddess within.</em></h1>
+          <h1>Remember the<br><em>Goddess Within.</em></h1>
           <p class="hero-intro">
             Enter a world where movement becomes medicine, beauty becomes ritual,
             and wellness becomes a return to your own radiant nature.
