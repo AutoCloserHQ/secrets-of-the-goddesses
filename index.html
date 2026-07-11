@@ -105,6 +105,7 @@ main, footer { position: relative; z-index: 1; }
 .menu-toggle { display: none; border: 0; background: none; padding: 8px; }
 
 .hero {
+  position: relative;
   min-height: 100svh;
   width: 100%;
   display: grid;
@@ -164,7 +165,7 @@ h1 em, h2 em { color: var(--gold-light); font-weight: 400; }
 .hero-media-label small { color: rgba(245,237,223,.72); font-size: 7px; letter-spacing: .22em; text-transform: uppercase; }
 .visual-caption { position: absolute; bottom: 8%; right: 2%; margin: 0; color: #a99fa4; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; transform: rotate(90deg) translateX(100%); transform-origin: right bottom; }
 .visual-caption span { color: var(--gold); margin-right: 14px; }
-.scroll-cue { position: absolute; left: 50%; bottom: 24px; display: flex; align-items: center; gap: 12px; color: #746d72; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; transform: translateX(-50%); }
+.scroll-cue { position: absolute; left: 50%; bottom: 18px; display: flex; align-items: center; gap: 12px; color: #746d72; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; transform: translateX(-50%); }
 .scroll-cue span { width: 1px; height: 34px; background: linear-gradient(var(--gold), transparent); animation: scrollLine 2s ease-in-out infinite; }
 
 .section { width: var(--page); margin: 0 auto; padding: 120px 0; }
@@ -214,7 +215,7 @@ h2 { margin-bottom: 0; font-size: clamp(54px, 6vw, 88px); line-height: .9; lette
 .vision-stats strong { display: block; color: var(--gold); font-family: var(--serif); font-size: 32px; font-weight: 400; }
 .vision-stats span { color: #9f979b; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
 
-.coming-next { padding-top: 80px; padding-bottom: 40px; }
+.coming-next { padding-top: 80px; padding-bottom: 22px; }
 .next-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 60px; }
 .next-heading .eyebrow { margin-bottom: 10px; }
 .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -228,7 +229,7 @@ h2 { margin-bottom: 0; font-size: clamp(54px, 6vw, 88px); line-height: .9; lette
 .roadmap-number { margin: 30px 0 18px; color: rgba(213,163,79,.35); font-family: var(--serif); font-size: 52px; line-height: 1; }
 .roadmap-step h3 { margin-bottom: 16px; font-size: 31px; }
 .roadmap-step > p:last-child { max-width: 300px; color: #968d92; font-size: 13px; }
-.final-cta { position: relative; min-height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 90px; text-align: center; overflow: hidden; background: radial-gradient(circle at center, rgba(102,34,72,.24), transparent 42%); }
+.final-cta { position: relative; min-height: 460px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 130px; text-align: center; overflow: hidden; background: radial-gradient(circle at center, rgba(102,34,72,.24), transparent 42%); }
 .final-cta::before, .final-cta::after { content: ""; position: absolute; width: 430px; height: 430px; border: 1px solid rgba(213,163,79,.15); border-radius: 50%; z-index: -1; }
 .final-cta::after { width: 570px; height: 570px; border-color: rgba(213,163,79,.07); }
 .final-cta .eyebrow { margin-bottom: 22px; }
@@ -335,8 +336,8 @@ footer p:last-child { justify-self: end; }
   .roadmap { grid-template-columns: 1fr; }
   .roadmap-step { min-height: 270px; border-right: 0; border-bottom: 1px solid var(--line); }
   .roadmap-step:last-child { border-bottom: 0; }
-  .coming-next { padding-bottom: 28px; }
-  .final-cta { min-height: 380px; margin-top: 70px; }
+  .coming-next { padding-bottom: 18px; }
+  .final-cta { min-height: 420px; margin-top: 100px; }
   footer { min-height: 100px; padding: 28px 0; }
   .circle-dialog { padding: 48px 24px 32px; }
   .circle-dialog h2 { font-size: 48px; }
