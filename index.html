@@ -163,9 +163,9 @@ h1 em, h2 em { color: var(--gold-light); font-weight: 400; }
 .hero-media-label { position: absolute; z-index: 3; left: 0; right: 0; bottom: 7%; margin: 0; text-align: center; text-shadow: 0 2px 14px rgba(0,0,0,.85); }
 .hero-media-label span { display: block; color: var(--gold-light); font-family: var(--serif); font-size: clamp(32px, 3vw, 46px); font-style: italic; line-height: 1; }
 .hero-media-label small { color: rgba(245,237,223,.72); font-size: 7px; letter-spacing: .22em; text-transform: uppercase; }
-.visual-caption { position: absolute; bottom: 8%; right: 2%; margin: 0; color: #a99fa4; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; transform: rotate(90deg) translateX(100%); transform-origin: right bottom; }
+.visual-caption { display: none !important; }
 .visual-caption span { color: var(--gold); margin-right: 14px; }
-.scroll-cue { position: absolute; left: 50%; bottom: 18px; display: flex; align-items: center; gap: 12px; color: #746d72; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; transform: translateX(-50%); }
+.scroll-cue { display: none !important; }
 .scroll-cue span { width: 1px; height: 34px; background: linear-gradient(var(--gold), transparent); animation: scrollLine 2s ease-in-out infinite; }
 
 .section { width: var(--page); margin: 0 auto; padding: 120px 0; }
@@ -292,11 +292,6 @@ footer p:last-child { justify-self: end; }
   .eyebrow, .hero-actions { justify-content: center; }
   .hero-intro { margin-left: auto; margin-right: auto; }
   .hero-visual { justify-self: center; width: min(76vw, 520px); margin-top: 20px; }
-  ..scroll-cue {
-  display: flex;
-  bottom: 14px;
-  opacity: .8;
-}
   .section { padding: 105px 0; }
   .section-heading { grid-template-columns: 1fr; gap: 28px; text-align: center; }
   .section-heading .eyebrow { justify-content: center; }
@@ -354,7 +349,45 @@ footer p:last-child { justify-self: end; }
   .reveal { opacity: 1; transform: none; }
 }
 
-    </style>
+    
+.site-end-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 34px auto 10px;
+  color: #8f858b;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.site-end-line {
+  display: block;
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(var(--gold), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+.site-end-text {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .site-end-cue {
+    margin-top: 26px;
+    margin-bottom: 4px;
+  }
+
+  .site-end-line {
+    height: 30px;
+  }
+}
+
+</style>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -421,11 +454,8 @@ footer p:last-child { justify-self: end; }
             <div class="hero-media-shade"></div>
             <p class="hero-media-label"><span>Kimaada</span><small>The muse in motion</small></p>
           </div>
-          <p class="visual-caption"><span>01</span> Movement · ritual · radiance</p>
-        </div>
-
-        <div class="scroll-cue" aria-hidden="true"><span></span>Scroll to awaken</div>
-      </section>
+</div>
+</section>
 
       <section class="realms section" id="realms">
         <div class="section-heading reveal">
@@ -521,6 +551,11 @@ footer p:last-child { justify-self: end; }
           <p class="eyebrow">Your doorway is waiting</p>
           <h2>Come closer to<br><em>your own magic.</em></h2>
           <button class="button button-primary" type="button" data-open-circle>Enter the circle <span>↗</span></button>
+        <div class="site-end-cue" aria-hidden="true">
+          <span class="site-end-line"></span>
+          <span class="site-end-text">Scroll to awaken</span>
+        </div>
+
         </div>
       </section>
     </main>
